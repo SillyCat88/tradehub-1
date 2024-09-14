@@ -2,8 +2,10 @@ import { generateYAxis } from '@/app/lib/utils';
 import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 import { poppins } from '@/app/ui/fonts';
 import { Income } from '@/app/lib/definitions';
+import { fetchIncome } from '@/app/lib/data';
 
-export default async function IncomeChart({ income }: { income: Income[] }) {
+export default async function IncomeChart() {
+  const income = await fetchIncome(); 
   const chartHeight = 350;
   // Attention! Uncomment this section when you reach this stage in the course.
 
